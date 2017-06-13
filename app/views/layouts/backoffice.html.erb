@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pibi ADMIN</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'backoffice', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'backoffice', 'data-turbolinks-track' => true %>
+
+
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon1.ico' %>
+</head>
+  <body>
+
+      <div id="wrapper">
+        <%= render partial: "layouts/backoffice_shared/navigation" %>
+          <div id="page-wrapper">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-12">
+                  <%= yield %>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <% if notice %>
+          <script>
+              $.notify("<%= notice %>", "success");
+          </script>
+      <% end %>
+
+  </body>
+</html>

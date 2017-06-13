@@ -1,0 +1,7 @@
+$(function(){
+$('#recipient-name').val('vendaspibi@terra.com.br');
+$('#sendMailModal').modal();
+  $('#sendMailModal').on('shown.bs.modal', function () {
+    $('#sender-name').focus();
+  })
+});
