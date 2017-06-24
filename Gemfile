@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+
 source 'https://rails-assets.org' do
     # NotifyJS
     gem 'rails-assets-notifyjs'
@@ -21,6 +22,8 @@ source 'https://rails-assets.org' do
     gem 'rails-assets-bootbox'
 end
 
+#Easy file attachment management for ActiveRecord
+gem 'paperclip', '~> 5.0.0'
 # i18n
 gem 'rails-i18n'
 # Foreman
@@ -58,6 +61,10 @@ group :development, :test do
   gem 'rails-erd'
   #Catches mail and serves it through a dream.
   gem 'mailcatcher'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
+  # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
+  gem 'lerolero_generator'
 end
 
 group :development do

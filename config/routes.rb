@@ -7,9 +7,15 @@ Rails.application.routes.draw do
   namespace :backoffice do
     get 'categories/index'
     get 'subcategories/index'
+    get 'products/index'
+    get 'brands/index'
+    get 'members/index'
+    get 'consumers/index'
     get 'dashboard', to: 'dashboard#index'
     resources :categories, except: [:show]
     resources :subcategories, except: [:show]
+    resources :products, except: [:show]
+    resources :brands, except: [:show]
   end
 
   get 'admin', to: 'backoffice/dashboard#index'

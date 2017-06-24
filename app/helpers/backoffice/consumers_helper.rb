@@ -1,0 +1,2 @@
+module Backoffice::ConsumersHelper
+end

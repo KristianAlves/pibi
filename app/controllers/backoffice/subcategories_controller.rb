@@ -2,7 +2,7 @@ class Backoffice::SubcategoriesController < BackofficeController
    before_action :set_subcategory, only: [:edit, :update, :destroy]
 
   def index
-    @subcategories = Subcategory.all
+    @subcategories = Subcategory.order_by_description
   end
 
   def new

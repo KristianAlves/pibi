@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518233123) do
+ActiveRecord::Schema.define(version: 20170620232249) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -82,16 +82,20 @@ ActiveRecord::Schema.define(version: 20170518233123) do
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "category_id"
+    t.integer  "subcategory_id"
     t.integer  "brand_id"
     t.integer  "admin_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "products", ["admin_id"], name: "index_products_on_admin_id"
   add_index "products", ["brand_id"], name: "index_products_on_brand_id"
-  add_index "products", ["category_id"], name: "index_products_on_category_id"
+  add_index "products", ["subcategory_id"], name: "index_products_on_subcategory_id"
 
   create_table "subcategories", force: :cascade do |t|
     t.string   "title"

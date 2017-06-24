@@ -1,0 +1,27 @@
+<h1 class="page-header">Clients - Physical Person</h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+      Show Clients
+  </div>
+  <div class="panel-body">
+      <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+              <thead>
+                  <tr>
+                      <th style="width: 50px">#</th>
+                      <th>Client</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <% @consumers.each do |consumer| %>
+                      <tr>
+                          <td><%= consumer.id %></td>
+                          <td><%= consumer.email %></td>
+                      </tr>
+                  <% end %>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
