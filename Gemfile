@@ -14,12 +14,14 @@ gem 'coffee-rails', '~> 4.1.0'
 
 
 source 'https://rails-assets.org' do
-    # NotifyJS
-    gem 'rails-assets-notifyjs'
+    # Bootstrap Notify
+    gem 'rails-assets-bootstrap.growl'
     # Bootstrapp
     gem 'rails-assets-bootstrap'
     # Bootbox
     gem 'rails-assets-bootbox'
+    # Animate CSS
+    gem 'rails-assets-animate.css'
 end
 
 #Easy file attachment management for ActiveRecord

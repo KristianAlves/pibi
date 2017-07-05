@@ -19,7 +19,7 @@
                     </div>
                         <div class="panel-body">
                             <div class="col-lg-6">
-                                <%= form_for([:backoffice, @product]) do |f| %>
+                                <%= form_for([:backoffice, @product], html: { multipart: true}) do |f| %>
                                     <div class="form-group">
                                         <div class="form-group">
                                         <label>Insert the product title</label>
@@ -30,17 +30,21 @@
                                         <%= f.text_area :description, class: "form-control", :rows => 8 %>
                                         </div>
                                         <div class="form-group">
+                                            <label>Insert the Picture </label>
+                                            <%= image_tag @product.picture(:medium), class: "img-thumbnail" %>
+                                            <%= f.file_field :picture, class: "form-control" %>
+                                        </div>
+                                        <div class="form-group">
                                             <label>Select Subcategory</label>
-                                            <%= f.collection_select :subcategory_id, Subcategory.all, :id, :title, prompt: true %>
+                                            <%= f.collection_select :subcategory_id, Subcategory.all, :id, :title, {}, { class: "form-control"} %>
                                         </div>
                                         <div class="form-group">
                                             <label>Select Brand</label>
-                                            <%= f.collection_select :brand_id, Brand.all, :id, :title, prompt: true %>
+                                            <%= f.collection_select :brand_id, Brand.all, :id, :title, {}, {class: "form-control"} %>
                                         </div>
 
-
                                     </div>
-
+                                    <br>
                                     <button type="submit" class="btn btn-primary">Submit Button</button>
                                 <% end %>
                             </div>

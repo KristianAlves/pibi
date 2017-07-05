@@ -3,5 +3,5 @@ $(function(){
   $('#sender-name').val('');
   $('#subject-name').val('');
   $('#message-text').val('');
-  $.notify('Mensagem enviada com sucesso!', "success")
+  $.notify( {message: 'Mensagem enviada com sucesso!'}, {type: 'success', placement: { from: 'top', align: 'center'}});
 });

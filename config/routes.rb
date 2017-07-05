@@ -26,6 +26,16 @@ Rails.application.routes.draw do
   namespace :site do
     get 'home/index'
     resources :send_mail, only: [:new, :create]
+    resources :product_detail, only: [:show]
+
+    namespace :profile do
+      namespace :legal do
+        resources :dashboard, only: [:index]
+      end
+      namespace :physical do
+        resources :dashboard, only: [:index]
+      end
+    end
   end
 
   root 'site/home#index'

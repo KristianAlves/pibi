@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootbox
+//= require bootstrap.growl
 
 /*  Sobrescreve o data-confirm do Rails */
 $.rails.allowAction = function(element) {

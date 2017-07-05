@@ -2,11 +2,10 @@
 <html>
 <head>
   <title>Comercial Pibi</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track' => true %>
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'site', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
@@ -14,15 +13,21 @@
 <body>
   <%=   render partial: "layouts/site_shared/navigation" %>
 
-                <div id= "home-detail" class="col-md-9">
-                    <div class="row">
-                            <hr>
-                            <hr>
-                        <%= yield %>
-                    </div>
-                </div>
+    <div id= "home-detail" class="col-md-12">
+        <div class="row">
+                <hr>
+                <hr>
+            <%= yield %>
+        </div>
+    </div>
 
   <%=   render partial: "layouts/site_shared/footer" %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'site', 'data-turbolinks-track' => true %>
+
+  <%= render partial: "layouts/shared/notifications" %>
+
 </body>
 
 </html>

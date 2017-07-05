@@ -1,4 +1,4 @@
-class Site::SendMailController < ApplicationController
+class Site::SendMailController < SiteController
 
 def new
   respond_to do |format|

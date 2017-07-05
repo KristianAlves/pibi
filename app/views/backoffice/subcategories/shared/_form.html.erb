@@ -27,7 +27,7 @@
 
                                     <div class="form-group">
                                         <label>Select Category</label>
-                                        <%= f.collection_select :category_id, Category.all, :id, :description, prompt: true %>
+                                        <%= f.collection_select :category_id, Category.all, :id, :description, {}, {class: "form-control"}%>
                                     </div>
 
 

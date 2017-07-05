@@ -9,8 +9,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <%= link_to "Comercial Pibi", root_path, class: "navbar-brand" %>
+                    <%= link_to "Comercial Pibi", root_path, class: "navbar-brand" %>
             </div>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -30,7 +31,7 @@
                                 <%= link_to current_member.email, site_home_index_path %>
                             </li>
                             <li>
-                                <%= link_to "Profile", site_home_index_path %>
+                                <%= link_to "Profile", site_profile_legal_dashboard_index_path %>
                             </li>
                             <li>
                                 <%= link_to "Logout", destroy_member_session_path, method: :delete %>
@@ -41,7 +42,7 @@
                                 <%= link_to current_consumer.email, site_home_index_path %>
                             </li>
                             <li>
-                                <%= link_to "Profile", site_home_index_path %>
+                                <%= link_to "Profile", site_profile_physical_dashboard_index_path %>
                             </li>
                             <li>
                                 <%= link_to "Logout", destroy_consumer_session_path, method: :delete %>
