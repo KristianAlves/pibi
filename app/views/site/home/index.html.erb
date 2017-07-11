@@ -1,31 +1,30 @@
-<html lang="en"><head>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    </head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <body>
 
-</head>
-
-<body>
-
-    <!-- Page Content -->
+        <!-- Page Content -->
     <div class="container">
+
         <div class="row">
-            <div class="col-md-3">
-                <p class="lead"></p>
+
+            <div id="home-sidebar" class="col-md-3">
+                <p class="lead">Categorias</p>
                 <div class="list-group">
-                <% @categories.each do |category| %>
-                    <a href="#" class="list-group-item"><%= category.description %></a>
-                <% end %>
+                    <% @categories.each do |category| %>
+                        <a href="#" class="list-group-item"><%= category.description %></a>
+                    <% end %>
                 </div>
             </div>
 
-            <div class="col-md-9">
-
+            <div id="product-detail" class="col-md-9">
                 <div class="row carousel-holder">
-
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -53,37 +52,36 @@
                         </div>
                     </div>
                 </div>
-          <hr>
+                <hr>
                 <div class="row">
 
-                <% @products.each do |product| %>
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                        <%= image_tag product.picture.url(:medium) %>
-                            <div class="caption">
-                                <h4>
-                                <%= link_to truncate(product.title, length: 27), site_product_detail_path(product) %>
-                                </h4>
-                                <p><%= truncate(product.description, length: 95) %></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-success" title="Solicitar orçamento">
-                                    <span class="fa fa-shopping-cart">   Solicitar orçamento</span>
-                                </button>
+                    <% @products.each do |product| %>
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+                            <div class="thumbnail">
+                            <%= image_tag product.picture.url(:medium) %>
+                                <div class="caption">
+                                    <h4>
+                                        <%= link_to truncate(product.title, length: 26), site_product_detail_path(product), remote: true %>
+                                    </h4>
+
+                                </div>
+                                <div>
+                                    <button class="btn btn-success" title="Solicitar orçamento">
+                                        <span class="fa fa-shopping-cart">   Solicitar orçamento</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <% end %>
-
+                    <% end %>
                 </div>
-
             </div>
 
-
+        </div>
     </div>
-    <!-- /.container -->
+        <!-- /.container -->
 
-</body></html>
+    </body>
+</html>
 
 <div class="container">
     <hr>

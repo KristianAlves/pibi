@@ -16,6 +16,20 @@
 //= require bootbox
 //= require bootstrap.growl
 
+
+/*  Spin  */
+$(document).ready(function() {
+  // Global ajax cursor change
+  $(document)
+    .ajaxStart(function () {
+        $('#global-spin').fadeIn('slow');
+    })
+    .ajaxStop(function () {
+        $('#global-spin').fadeOut('slow');
+    });
+});
+
+
 /*  Sobrescreve o data-confirm do Rails */
 $.rails.allowAction = function(element) {
   var message = element.attr('data-confirm');
