@@ -14,7 +14,7 @@ categories = [ "Material Escolar",
                         "Papelaria"]
 
 categories.each do |category|
-  Category.find_or_create_by(description: category)
+  Category.friendly.find_or_create_by(description: category)
 end
 
 puts "Categorias cadastradas com sucesso!"
@@ -95,6 +95,7 @@ puts "Cadastrando PRODUTOS..."
       Product.create!(
         title: Faker::Lorem.word,
         description: LeroleroGenerator.sentence,
+        category: Category.all.sample,
         subcategory: Subcategory.all.sample,
         brand: Brand.all.sample,
         admin: Admin.all.sample,

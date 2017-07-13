@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+    <%= render partial: "site/shared/sidebar" %>
+        <div id="product-detail" class="col-md-9">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading" align="center">
+                        <%= @category.description %>
+                    </div>
+                </div>
+
+            <div class="row">
+                <%= render partial: "site/shared/product" %>
+            </div>
+        </div>
+    </div>
+</div>
