@@ -4,7 +4,8 @@
         <%= image_tag product.picture.url(:medium) %>
             <div class="caption">
                 <h4>
-                    <%= link_to truncate(product.title, length: 26), site_product_detail_path(product), remote: true %>
+                    <%= link_to truncate(product.title, length: 26), site_product_detail_path(product),
+                                                                          remote: true, data: { push: :partial}%>
                 </h4>
 
             </div>
@@ -16,3 +17,8 @@
         </div>
     </div>
 <% end %>
+<div class="row">
+    <div class="text-center">
+        <%= paginate @products %>
+    </div>
+</div>

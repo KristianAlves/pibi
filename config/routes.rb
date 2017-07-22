@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   namespace :site do
     get 'home/index'
+    get 'search', to: 'search#products'
     resources :send_mail, only: [:new, :create]
     resources :product_detail, only: [:show]
     resources :categories, only: [:show]

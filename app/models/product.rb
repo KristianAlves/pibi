@@ -4,6 +4,9 @@ class Product < ActiveRecord::Base
   belongs_to :brand
   belongs_to :admin
 
+  # Constants
+  qtt_per_page = 9
+
   # Validates
   validates_presence_of :title, :description, :category, :subcategory, :brand, :picture
 
@@ -13,7 +16,8 @@ class Product < ActiveRecord::Base
 
   # Scope
   scope :last_nine, ->{ limit(9).order(:created_at)}
-  scope :descending_order, ->(quantity = 12) {limit(quantity).order(created_at: :desc)}
-  scope :by_category, ->(id) {where(category: id)}
+  scope :descending_order, ->(page) {order(created_at: :desc).page(page).per(qtt_per_page)}
+  scope :by_category, ->(id, page) {where(category: id).page(page).per(qtt_per_page)}
+  scope :search, ->(q, page) {where("title LIKE ?", "%#{q}%").page(page).per(qtt_per_page)}
 
 end

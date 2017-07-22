@@ -1,0 +1,13 @@
+<div class="thumbnail">
+  <%= image_tag @product.picture.url(:large), class:"img-responsive"%>
+  <hr>
+
+    <div class="text-right">
+        <a class="btn btn-success">Solicitar orçamento</a>
+    </div>
+
+    <div class="caption-full">
+        <h2 align="center"><%= @product.title %>   </h2>
+        <h5><%= @product.description %></h5>
+    </div>
+</div>
