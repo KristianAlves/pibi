@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713224109) do
+ActiveRecord::Schema.define(version: 20170727230836) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,10 +38,24 @@ ActiveRecord::Schema.define(version: 20170713224109) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "banners", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
   create_table "brands", force: :cascade do |t|
-    t.string   "title",      limit: 60
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "title",                limit: 60
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -77,6 +98,16 @@ ActiveRecord::Schema.define(version: 20170713224109) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
+  create_table "logos", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
   create_table "members", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -114,6 +145,31 @@ ActiveRecord::Schema.define(version: 20170713224109) do
   add_index "products", ["brand_id"], name: "index_products_on_brand_id"
   add_index "products", ["category_id"], name: "index_products_on_category_id"
   add_index "products", ["subcategory_id"], name: "index_products_on_subcategory_id"
+
+  create_table "profile_consumers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "cpf",         limit: 11
+    t.string   "phone",       limit: 40
+    t.integer  "consumer_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "profile_consumers", ["consumer_id"], name: "index_profile_consumers_on_consumer_id"
+
+  create_table "profile_members", force: :cascade do |t|
+    t.string   "company_name"
+    t.string   "fantasy_name"
+    t.string   "street"
+    t.string   "city"
+    t.integer  "cnpj",         limit: 14
+    t.integer  "phone",        limit: 40
+    t.integer  "member_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "profile_members", ["member_id"], name: "index_profile_members_on_member_id"
 
   create_table "subcategories", force: :cascade do |t|
     t.string   "title"

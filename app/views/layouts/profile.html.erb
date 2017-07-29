@@ -20,10 +20,18 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li>
-                    <a href="#">Dashboard</a>
+                  <% if current_member %>
+                      <%= link_to "Dashboard", site_profile_legal_dashboard_index_path %>
+                  <% else %>
+                      <%= link_to "Dashboard", site_profile_physical_dashboard_index_path %>
+                  <% end %>
                 </li>
                 <li>
-                    <a href="#">My data</a>
+                  <% if current_member %>
+                      <%= link_to "My data", edit_site_profile_legal_my_datum_path(current_member.id) %>
+                  <% else %>
+                      <%= link_to "My data", edit_site_profile_physical_my_datum_path(current_consumer.id) %>
+                  <% end %>
                 </li>
                 <li>
                     <a href="#">My budgets</a>
@@ -37,7 +45,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Expandir Menu</a>
                         <%= yield %>
                     </div>
                 </div>
@@ -48,6 +56,9 @@
     </div>
     <!-- /#wrapper -->
 
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'site' %>
+  <%= javascript_include_tag 'site/profile' %>
 
     <!-- Menu Toggle Script -->
     <script>
@@ -57,9 +68,6 @@
     });
     </script>
 
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'site' %>
-  <%= javascript_include_tag 'site/profile' %>
 
   <%= render partial: "layouts/shared/notifications" %>
 

@@ -1,0 +1,28 @@
+'pt-BR':
+  site:
+    sign_up_legal: Cadastrar-se - Pessoa Jurídica
+    sign_up_physical: Cadastrar-se - Pessoa Física
+    sign_up_btn: Cadastrar-se
+    sign_in_legal: Login - Pessoa Jurídica
+    sign_in_physical: Login - Pessoa Física
+    login: Entrar
+    remember: Lembrar-me
+  devise:
+    forgot: Esqueceu sua senha?
+    send_mail: Reinicialização de senha
+    change_pwd: Mudar minha senha
+    change: Mude sua senha
+
+  helpers:
+    label:
+      member[profile_member_attributes]:
+        company_name: Razão Social
+        fantasy_name: Nome Fantasia
+        street: Rua
+        city: Cidade
+        cnpj: CNPJ
+        phone: Telefone
+      consumer[profile_consumer_attributes]:
+        name: Nome
+        phone: Telefone
+        cpf: CPF

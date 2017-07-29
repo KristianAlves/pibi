@@ -57,7 +57,16 @@ puts "Cadastrando Pessoa Jurídica Padrão..."
             password: "123456",
             password_confirmation: "123456"
             )
-        member.save!
+      member.build_profile_member
+
+      member.profile_member.company_name = "Comercial Pibi Ltda"
+      member.profile_member.fantasy_name = "PIBI"
+      member.profile_member.cnpj = "79017752000115"
+      member.profile_member.street = "Rua Victor Rosemberb, 384"
+      member.profile_member.city = "Jaraguá do Sul"
+      member.profile_member.phone = "3370-8822"
+
+      member.save!
 
 puts "MEMBRO Cadastrado com Sucesso!"
 
@@ -70,7 +79,13 @@ puts "Cadastrando Pessoa Física Padrão..."
             password: "123456",
             password_confirmation: "123456"
             )
-        consumer.save!
+      consumer.build_profile_consumer
+
+      consumer.profile_consumer.name = "Kristian Alves da Silva"
+      consumer.profile_consumer.cpf = "12345678901"
+      consumer.profile_consumer.phone = "3370-8822"
+
+      consumer.save!
 
 puts "Pessoa Física Cadastrada com Sucesso!"
 
@@ -86,6 +101,19 @@ puts "Cadastrando MARCAS..."
     end
 
 puts "MARCAS Cadastradas com Sucesso!"
+
+####################################
+
+puts "Cadastrando BANNERS..."
+
+  5.times do
+    Banner.create!(
+      title: Faker::Commerce.department,
+      picture: File.new(Rails.root.join('public', 'templates', 'image-for-products', "#{Random.rand(9)}.jpg"), 'r')
+      )
+  end
+
+puts "BANNERS Cadastrados com Sucesso!"
 
 ####################################
 

@@ -1,30 +1,44 @@
+  <%=   render partial: "layouts/site_shared/navigation" %>
+
+    <div class="row">
+            <hr>
+            <hr>
+    </div>
+
 <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Sign up - Physical Person</h3>
+                        <h3 class="panel-title"><%= t('site.sign_up_physical') %></h3>
                     </div>
                     <div class="panel-body">
                         <%= form_for(resource, as: resource_name, url: registration_path(resource_name, role: "form")) do |f| %>
+
                             <fieldset>
+                                <%= f.fields_for :profile_consumer do |consumer_fields| %>
+                                    <div class="form-group">
+                                        <%= consumer_fields.text_field :name, autofocus: true, class: "form-control", placeholder: "Nome Completo", autofocus: "autofocus" %>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= consumer_fields.text_field :cpf, autofocus: true, class: "form-control", placeholder: "CPF", autofocus: "autofocus" %>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= consumer_fields.text_field :phone, autofocus: true, class: "form-control", placeholder: "Telefone", autofocus: "autofocus" %>
+                                    </div>
+                                <% end %>
                                 <div class="form-group">
                                     <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "E-mail", type:"email", autofocus: "autofocus" %>
                                 </div>
                                 <div class="form-group">
                                 <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password", type: "password"%>
                                 </div>
-
                                 <div class="form-group">
                                 <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Password Confirmation", type: "password"%>
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <%= f.check_box :remember_me %> Remember Me
-                                    </label>
-                                </div>
+
                                 <!-- Change this to a button or input when using this as a form -->
-                                <%= f.submit "Sign up", class: "btn btn-lg btn-success btn-block" %>
+                                <%= f.submit t('site.sign_up_btn'), class: "btn btn-lg btn-success btn-block" %>
                             </fieldset>
                         <% end %>
                     </div>
@@ -33,8 +47,9 @@
         </div>
     </div>
 
-<% flash.each do |key, value| %>
-  <script>
-      $.notify("<%= value %>", "info");
-  </script>
+<% unless devise_error_messages!.blank? %>
+    <% resource.errors.full_messages.each do |message| %>
+        <%= javascript_tag "$.notify( {message: '#{message}'},
+                                        {type: 'danger', placement: { from: 'top', align: 'center'}});" %>
+    <% end %>
 <% end %>

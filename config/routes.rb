@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :backoffice do
-  end
 
-  devise_for :consumers
   namespace :backoffice do
     get 'categories/index'
     get 'subcategories/index'
@@ -11,17 +8,24 @@ Rails.application.routes.draw do
     get 'brands/index'
     get 'members/index'
     get 'consumers/index'
+    get 'banners/index'
+    get 'logos/index'
+    get 'abouts/index'
     get 'dashboard', to: 'dashboard#index'
     resources :categories, except: [:show]
     resources :subcategories, except: [:show]
     resources :products, except: [:show]
     resources :brands, except: [:show]
+    resources :banners, except: [:show]
+    resources :logos, except: [:show]
+    resources :abouts, except: [:show]
   end
 
   get 'admin', to: 'backoffice/dashboard#index'
 
   devise_for :admins, :skip => [:registrations]
-  devise_for :members
+  devise_for :members, controllers: { registrations: 'members/registrations'}
+  devise_for :consumers, controllers: { registrations: 'consumers/registrations'}
 
   namespace :site do
     get 'home/index'
@@ -33,9 +37,11 @@ Rails.application.routes.draw do
     namespace :profile do
       namespace :legal do
         resources :dashboard, only: [:index]
+        resources :my_data, only: [:edit, :update]
       end
       namespace :physical do
         resources :dashboard, only: [:index]
+        resources :my_data, only: [:edit, :update]
       end
     end
   end

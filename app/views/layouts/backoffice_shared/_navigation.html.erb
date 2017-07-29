@@ -75,7 +75,7 @@
                 </li>
 
                  <li>
-                    <a href="#"><i class="fa fa-edit fa-fw"></i> Clients<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-users fa-fw"></i> Clients<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                            <%= link_to 'Legal Person', backoffice_members_index_path %>
@@ -94,6 +94,12 @@
                     </ul>
                 </li>
 
+                 <li>
+                     <%= link_to backoffice_banners_index_path do %>
+                         <i class="fa fa-photo fa-fw"></i> Banner
+                     <% end %>
+                </li>
+
                 <li>
                     <a href="#"><i class="fa fa-wrench fa-fw"></i> Configurations<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
@@ -102,6 +108,12 @@
                         </li>
                         <li>
                             <%= link_to "Notifications", "#" %>
+                        </li>
+                        <li>
+                            <%= link_to "Logomarca", backoffice_logos_index_path     %>
+                        </li>
+                        <li>
+                                <%= link_to "About", backoffice_abouts_index_path     %>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

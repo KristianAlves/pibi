@@ -5,4 +5,56 @@
             <%= link_to " #{category.description}", site_category_path(category), class: "list-group-item" %>
         <% end %>
     </div>
+
+  <div style="height: 200px;" style="width: 250px;">
+      <p class="lead">Marcas</p>
+        <div class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner ">
+            <% @brands.each do |brand| %>
+                <div align="center" class="item <%= @brands.first.id == brand.id ? "active" : "" %>">
+                  <%= image_tag brand.picture.url(:thumb), class: "slide-image" %>
+                </div>
+            <% end %>
+            </div>
+        </div>
+  </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <p class="lead" style="height: 10px;">Horário de atendimento</p>
+      </div>
+      <!-- .panel-heading -->
+      <div class="panel-body">
+          <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">Atacado</a>
+                      </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                      <div class="panel-body">
+                        <b>Segunda a Sexta:</b> </br> 07:30 - 12:00 / 13:00 - 17:18
+                      </div>
+                  </div>
+              </div>
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">Varejo</a>
+                      </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                      <div class="panel-body">
+                        <b>Segunda a Sexta: </b></br> 08:30 - 12:00 / 13:30 - 18:00 <br>
+                        <b>Sábado: </b></br> 08:00 - 12:00
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- .panel-body -->
+    </div>
+
 </div>
+

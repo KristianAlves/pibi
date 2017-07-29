@@ -1,0 +1,7 @@
+$(function(){
+  $('#sendMailModal').modal('hide');
+  $('#sender-name').val('');
+  $('#subject-name').val('');
+  $('#message-text').val('');
+  $.notify( {message: 'Mensagem enviada com sucesso!'}, {type: 'success', placement: { from: 'top', align: 'center'}});
+});

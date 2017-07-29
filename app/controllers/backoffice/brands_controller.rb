@@ -44,7 +44,7 @@ private
   end
 
   def params_brand
-    params.require(:brand).permit(:title)
+    params.require(:brand).permit(:title, :picture)
   end
 
 end

@@ -13,6 +13,7 @@
               <thead >
                   <tr>
                       <th style="width: 50px">#</th>
+                      <th style="width: 250px">Logo</th>
                       <th>Brand</th>
                       <th></th>
                   </tr>
@@ -21,6 +22,7 @@
                   <% @brands.each do |brand| %>
                       <tr>
                       <td><%= brand.id %></td>
+                      <td style: align="center"><%= image_tag brand.picture.url(:thumb) %></td>
                       <td><%= brand.title %></td>
                       <th style="width: 90px"> </style>
                           <%= link_to edit_backoffice_brand_path(brand), class: "btn btn-primary btn-circle" do %>
