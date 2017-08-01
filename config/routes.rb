@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   namespace :backoffice do
     get 'categories/index'
     get 'subcategories/index'
@@ -29,9 +28,11 @@ Rails.application.routes.draw do
 
   namespace :site do
     get 'home/index'
+    get 'about/index'
     get 'search', to: 'search#products'
     resources :send_mail, only: [:new, :create]
     resources :product_detail, only: [:show]
+    resources :abouts, only: [:show]
     resources :categories, only: [:show]
 
     namespace :profile do

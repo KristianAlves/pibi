@@ -1,0 +1,9 @@
+<% @abouts.each do |about| %>
+  <div align="center">
+    <h1> <%= about.title %> </h1>
+  </div>
+
+  <div align="justify">
+    <h5> <%= md_to_html about.description %> </h5>
+  </div>
+<% end %>

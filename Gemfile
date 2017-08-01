@@ -19,6 +19,8 @@ gem 'wiselinks'
 gem 'kaminari'
 # Translations for the kaminari gem
 gem 'kaminari-i18n'
+#The safe Markdown parser, reloaded.
+gem 'redcarpet'
 
 
 source 'https://rails-assets.org' do
@@ -30,6 +32,8 @@ source 'https://rails-assets.org' do
     gem 'rails-assets-bootbox'
     # Animate CSS
     gem 'rails-assets-animate.css'
+    # Bootstrap Markdown
+    gem 'rails-assets-bootstrap-markdown'
 end
 
 #Easy file attachment management for ActiveRecord
