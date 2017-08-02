@@ -21,7 +21,8 @@ gem 'kaminari'
 gem 'kaminari-i18n'
 #The safe Markdown parser, reloaded.
 gem 'redcarpet'
-
+# DocumentosBr é um 'wrapper' para a suíte de funcionalidades das Gems 'CpfUtils', 'CnpjUtils' e 'TituloEleitorUtils'.
+gem 'brazilian_documents', '~> 0.1.2'
 
 source 'https://rails-assets.org' do
     # Bootstrap Notify

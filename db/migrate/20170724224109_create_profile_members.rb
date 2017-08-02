@@ -5,7 +5,7 @@ class CreateProfileMembers < ActiveRecord::Migration
       t.string :fantasy_name
       t.string :street
       t.string :city
-      t.integer :cnpj, :limit => 14
+      t.string :cnpj, :limit => 14
       t.integer :phone, :limit => 40
       t.references :member, index: true, foreign_key: true
 

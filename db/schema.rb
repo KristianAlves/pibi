@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 20170727230836) do
 
   create_table "profile_consumers", force: :cascade do |t|
     t.string   "name"
-    t.integer  "cpf",         limit: 11
+    t.string   "cpf",         limit: 11
     t.string   "phone",       limit: 40
     t.integer  "consumer_id"
     t.datetime "created_at",             null: false
@@ -162,7 +162,7 @@ ActiveRecord::Schema.define(version: 20170727230836) do
     t.string   "fantasy_name"
     t.string   "street"
     t.string   "city"
-    t.integer  "cnpj",         limit: 14
+    t.string   "cnpj",         limit: 14
     t.integer  "phone",        limit: 40
     t.integer  "member_id"
     t.datetime "created_at",              null: false

@@ -1,6 +1,8 @@
 class Consumer < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  require 'br_documents'
+
 
   has_one :profile_consumer
   accepts_nested_attributes_for :profile_consumer
@@ -22,6 +24,8 @@ class Consumer < ActiveRecord::Base
   def nested_attributes_consumer_cpf
     if nested_attributes_cpf_blank?
       errors.add(:base, "CPF não pode ficar em branco")
+    elsif nested_attributes_cpf_invalid?
+      errors.add(:base, "CPF inválido")
     end
   end
 
@@ -31,6 +35,9 @@ class Consumer < ActiveRecord::Base
     end
   end
 
+
+
+
   def nested_attributes_name_blank?
     profile_consumer.name.blank?
   end
@@ -39,8 +46,13 @@ class Consumer < ActiveRecord::Base
     profile_consumer.cpf.blank?
   end
 
+  def nested_attributes_cpf_invalid?
+    BRDocuments::CPF.invalid?(profile_consumer.cpf)
+  end
+
   def nested_attributes_phone_blank?
     profile_consumer.phone.blank?
   end
+
 
 end

@@ -43,6 +43,8 @@ class Member < ActiveRecord::Base
   def nested_attributes_member_cnpj
     if nested_attributes_cnpj_blank?
       errors.add(:base, "CNPJ não pode ficar em branco")
+    elsif nested_attributes_cnpj_invalid?
+      errors.add(:base, "CNPJ inválido")
     end
   end
 
@@ -71,6 +73,10 @@ class Member < ActiveRecord::Base
 
   def nested_attributes_cnpj_blank?
     profile_member.cnpj.blank?
+  end
+
+  def nested_attributes_cnpj_invalid?
+    BRDocuments::CNPJ.invalid?(profile_member.cnpj)
   end
 
   def nested_attributes_phone_blank?
