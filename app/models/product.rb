@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   qtt_per_page = 9
 
   # Validates
-  validates_presence_of :title, :description, :category, :subcategory, :brand, :picture
+  validates_presence_of :title, :description, :category, :subcategory, :brand, :picture, presence: true
 
   # Paperclip
   has_attached_file :picture, styles: { large: "800x300>", medium: "300x300#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

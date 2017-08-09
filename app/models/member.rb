@@ -1,6 +1,7 @@
 class Member < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  require 'br_documents'
 
   has_one :profile_member
   accepts_nested_attributes_for :profile_member

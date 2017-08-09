@@ -34,6 +34,8 @@ Rails.application.routes.draw do
     resources :product_detail, only: [:show]
     resources :abouts, only: [:show]
     resources :categories, only: [:show]
+    resources :cart, except: [:show]
+    resources :cart_consumer, except: [:show]
 
     namespace :profile do
       namespace :legal do

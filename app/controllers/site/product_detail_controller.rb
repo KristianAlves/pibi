@@ -4,5 +4,6 @@ class Site::ProductDetailController < SiteController
     @categories = Category.order_by_description
     @product = Product.find(params[:id])
     @logos = Logo.all
+    @brands = Brand.all
   end
 end

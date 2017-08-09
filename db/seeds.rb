@@ -82,7 +82,7 @@ puts "Cadastrando Pessoa Física Padrão..."
       consumer.build_profile_consumer
 
       consumer.profile_consumer.name = "Kristian Alves da Silva"
-      consumer.profile_consumer.cpf = "12345678901"
+      consumer.profile_consumer.cpf = "05367537928"
       consumer.profile_consumer.phone = "3370-8822"
 
       consumer.save!

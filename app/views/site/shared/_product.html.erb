@@ -1,21 +1,67 @@
 <% @products.each do |product| %>
     <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
-        <%= image_tag product.picture.url(:medium) %>
-            <div class="caption">
-                <h4>
-                    <%= link_to truncate(product.title, length: 26), site_product_detail_path(product),
-                                                                          remote: true, data: { push: :partial}%>
-                </h4>
-            </div>
+            <%= image_tag product.picture.url(:medium) %>
+                <div class="caption">
+                    <h4>
+                        <%= link_to truncate(product.title, length: 26), site_product_detail_path(product),
+                                                                              remote: true, data: { push: :partial}%>
+                    </h4>
+                </div>
+
             <div>
-                <button class="btn btn-success" title="Solicitar orçamento">
-                    <span class="fa fa-shopping-cart">   Solicitar orçamento</span>
-                </button>
+                <% if member_signed_in? %>
+                    <div class="text-right">
+                    <%= form_tag(site_cart_index_path) do %>
+                        <%= hidden_field_tag :product_id, product.id %>
+                        <%= submit_tag "Solicitar orçamento", class: "btn btn-success btn-block btn-sm" %>
+                    <% end %>
+                    </div>
+                <% elsif consumer_signed_in?%>
+                    <div class="text-right">
+                    <%= form_tag(site_cart_consumer_index_path) do %>
+                        <%= hidden_field_tag :product_id, product.id %>
+                        <%= submit_tag "Solicitar orçamento", class: "btn btn-success btn-block btn-sm" %>
+                    <% end %>
+                    </div>
+                <% else %>
+                    <div class="text-right">
+                        <div class="panel-body">
+                            <!-- Button trigger modal -->
+                            <button class= "btn btn-primary btn-block btn-sm" data-toggle="modal" data-target="#myModal">
+                                Faça login para orçar
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body", align="center">
+                                            Deseja fazer login como Pessoa <b>Física</b> ou <b>Jurídica</b>?
+                                        </div>
+                                        <div class="modal-footer", align="center">
+                                        <%= link_to "Física", new_consumer_session_path, class: "btn btn-success" %>
+                                        <%= link_to "Jurídica", new_member_session_path, class: "btn btn-primary" %>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
 <% end %>
+
+
+
+
 <div class="row">
     <div class="text-center">
         <%= paginate @products %>
