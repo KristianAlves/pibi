@@ -2,6 +2,9 @@ class Site::Profile::Legal::MyDataController < Site::ProfileController
   before_action :set_profile_member, only: [:edit, :update]
 
   def edit
+    @logos = Logo.all
+    @abouts = About.all
+    @carts_itens = Cart.count
   end
 
   def update

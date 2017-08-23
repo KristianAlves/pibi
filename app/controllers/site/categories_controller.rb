@@ -6,6 +6,7 @@ class Site::CategoriesController < SiteController
     @products = Product.by_category(@category, params[:page])
     @brands = Brand.all
     @logos = Logo.all
+    @carts_itens = Cart.count
   end
 
 end

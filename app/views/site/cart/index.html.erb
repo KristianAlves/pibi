@@ -14,13 +14,14 @@
 
       <%= csrf_meta_tags %>
 
-<h1>Carrinho de Orçamento</h1>
+
 
     <% if @carts_itens == 0 %>
         <div class= "text-center">
             <h3> Seu carrinho esta vazio </h3>
         </div>
     <% else %>
+<h1>Carrinho de Orçamento</h1>
             <div class= "text-right">
                 <%= link_to site_home_index_path, class:"btn btn-success" do%>
                     <i class="fa fa-shopping-cart  fa-fw"></i> Continuar Orçando
@@ -41,23 +42,15 @@
                             <% @carts.each do |cart| %>
                                 <tr>
                                     <td><%= cart.product.title %></td>
-                                    <td style="width: 100px"> <select class="form-control">
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
-                                                    </select></td>
-                                    </td>
-                                    <td style="width: 50px">
-
-                                                    <%= link_to site_cart_path(cart.id),
-                                                     method: :delete, class:"btn btn-danger btn-circle",
-                                                     data: {confirm: "Deseja realmente excluir este item?"} do %>
-                                                        <i class="fa fa-minus"></i>
-                                                    <% end %>
+                                    <td style="width: 100px"><%= best_in_place cart, :quantity %></td>
+                                    <td style="width: 50px"> </style>
+                                          <%= link_to site_cart_path(cart.id), method: :delete, class:"btn btn-danger btn-circle",
+                                           data: {confirm: "Deseja realmente excluir este item?"} do %>
+                                              <i class="fa fa-trash-o"></i>
+                                          <% end %>
                                     </td>
                                 </tr>
+
                                 <% end %>
                             </tbody>
                         </table>
@@ -65,13 +58,13 @@
                     <!-- /.table-responsive -->
                 </div>
 
-            <div class= "text-right">
-            <%= link_to "#", class: "btn btn-success  fa fa-check",
-                    data: {toggle: 'modal', target: '#CartModal'} do %>
-                Finalizar orçamento
-                </button>
-                <% end %>
-            </div>
+                                    <div class= "text-right">
+                                    <%= link_to new_site_send_mail_member_path, class: "btn btn-success  fa fa-check",
+                                            remote: true do %>
+                                        Finalizar orçamento
+                                        </button>
+                                        <% end %>
+                                    </div>
 
     <% end %>
 

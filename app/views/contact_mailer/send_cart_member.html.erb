@@ -1,0 +1,13 @@
+<h4>Orçamento enviado via site </h4>
+
+<h4> Cliente: </h4>
+  <li><b>E-mail:</b> <%= @sender %></li>
+  <li><b>Empresa:</b> <%= @profile_member%></li>
+  <li><b>Observação:</b> <%= @message %></li>
+
+<h4> Produtos: </h4>
+  <% @carts.each do |cart| %>
+    <li>
+      <%= cart.quantity  %> - <%= cart.product.title %>
+    </li>
+  <% end %>

@@ -5,5 +5,6 @@ class Site::ProductDetailController < SiteController
     @product = Product.find(params[:id])
     @logos = Logo.all
     @brands = Brand.all
+    @carts_itens = Cart.count
   end
 end

@@ -8,6 +8,7 @@ class Site::CartConsumerController < SiteController
     @abouts = About.all
     @products = Product.where(consumer: current_consumer)
     @cart_consumers = CartConsumer.where(buyer: current_consumer)
+    @carts_itens = Cart.count
   end
 
   def create

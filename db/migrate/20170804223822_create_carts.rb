@@ -3,7 +3,7 @@ class CreateCarts < ActiveRecord::Migration
     create_table :carts do |t|
       t.references :product, index: true, foreign_key: true
       t.string :description
-      t.integer :quantity, default: 1
+      t.string :quantity, default: 1
       t.timestamps null: false
 
       t.integer :buyer_id, index: true

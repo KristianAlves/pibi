@@ -6,17 +6,24 @@
         <h4 class="modal-title" id="exampleModalLabel">Finalizar orçamento</h4>
       </div>
       <div class="modal-body">
-        <form>
+        <%= form_tag(site_send_mail_member_index_path, remote: true) do %>
           <div class="form-group">
-            <label for="message-text" class="control-label">Message:</label>
-            <textarea class="form-control" id="message-text" placeholder= "Caso queira, pode deixar uma observação."></textarea>
+
+          <div class="form-group">
+            <label for="profile_member-text" class="control-label">From:</label>
+            <%= text_field_tag(:'profile_member-text', nil, class:"form-control", readonly: "readonly" ) %>
+            <%= text_field_tag(:'sender-text', nil, class:"form-control", readonly: "readonly" ) %>
           </div>
-        </form>
+
+            <label for="message-text" class="control-label">Observation:</label>
+            <%= text_area_tag(:'message-text', nil , class: "form-control" ) %>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Enviar orçamento</button>
+        <%= submit_tag "Enviar orçamento", class: "btn btn-primary" %>
       </div>
+        <% end %>
     </div>
   </div>
 </div>

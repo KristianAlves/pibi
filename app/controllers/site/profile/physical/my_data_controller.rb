@@ -2,6 +2,8 @@ class Site::Profile::Physical::MyDataController < Site::ProfileController
   before_action :set_profile_consumer, only: [:edit, :update]
 
   def edit
+    @logos = Logo.all
+    @abouts = About.all
   end
 
   def update

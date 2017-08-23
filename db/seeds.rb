@@ -43,7 +43,7 @@ puts "Cadastrando ADMINISTRADOR Padrão..."
       Admin.create!(
             email: "admin@admin.com",
             password: "123456",
-            password_confirmation: "123456",
+            password_confirmation: "123456"
       )
 
 puts "ADMINISTRADOR Cadastrado com Sucesso!"
@@ -114,6 +114,16 @@ puts "Cadastrando BANNERS..."
   end
 
 puts "BANNERS Cadastrados com Sucesso!"
+
+####################################
+
+puts "Cadastrando LOGO..."
+
+      logo = Logo.new(
+            title: "Pibi"
+      )
+
+puts "LOGO Cadastrado com Sucesso!"
 
 ####################################
 

@@ -6,6 +6,7 @@ class Site::AboutController < SiteController
     @brands = Brand.all
     @logos = Logo.all
     @abouts = About.all
+    @carts_itens = Cart.count
   end
 
 end

@@ -23,6 +23,8 @@ gem 'kaminari-i18n'
 gem 'redcarpet'
 # DocumentosBr é um 'wrapper' para a suíte de funcionalidades das Gems 'CpfUtils', 'CnpjUtils' e 'TituloEleitorUtils'.
 gem 'brazilian_documents', '~> 0.1.2'
+# IA RESTful unobtrusive jQuery Inplace-Editor and a helper as a Rails Gem
+gem 'best_in_place'
 
 source 'https://rails-assets.org' do
     # Bootstrap Notify

@@ -5,5 +5,6 @@ class Site::HomeController < SiteController
     @banners = Banner.all
     @brands = Brand.all
     @logos = Logo.all
+    @carts_itens = Cart.count
   end
 end

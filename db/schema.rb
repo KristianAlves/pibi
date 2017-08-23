@@ -73,9 +73,9 @@ ActiveRecord::Schema.define(version: 20170808231053) do
   create_table "carts", force: :cascade do |t|
     t.integer  "product_id"
     t.string   "description"
-    t.integer  "quantity",    default: 1
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "quantity",    default: "1"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "buyer_id"
   end
 

@@ -1,0 +1,11 @@
+*** Mensagem enviada via site ***
+---------------------------------------------------
+CLIENTE:
+E-mail: <%= @sender %>
+Empresa: <%= @profile_member%>
+Observação: <%= @message %>
+-----------------------------------------------------
+PRODUTOS:
+<% @carts.each do |cart| %>
+    <%= cart.quantity %> - <%= cart.product.title %>
+<% end %>

@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     get 'home/index'
     get 'about/index'
     get 'search', to: 'search#products'
+    resources :send_mail_consumer, only: [:new, :create]
+    resources :send_mail_member, only: [:new, :create]
     resources :send_mail, only: [:new, :create]
     resources :product_detail, only: [:show]
     resources :abouts, only: [:show]

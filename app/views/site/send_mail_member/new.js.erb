@@ -1,0 +1,5 @@
+$(function(){
+  $('#sender-text').val(' <%= @current_member.email %>')
+  $('#profile_member-text').val(' <%= @current_member.profile_member.company_name %>')
+  $('#CartModal').modal();
+});
