@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-                <h1 class="page-header">Subcategories</h1>
+                <h1 class="page-header"><%= t('backoffice.subcategory') %></h1>
                     <% if @subcategory.errors.any? %>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -21,17 +21,17 @@
                             <div class="col-lg-6">
                                 <%= form_for([:backoffice, @subcategory]) do |f| %>
                                     <div class="form-group">
-                                        <label>Insert new subcategory</label>
+                                        <label><%= t('backoffice.insert_new_subcategory') %></label>
                                         <%= f.text_field :title, class: "form-control", placeholder: "Ex. Notebook"%>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Select Category</label>
+                                        <label><%= t('backoffice.select_category') %></label>
                                         <%= f.collection_select :category_id, Category.all, :id, :description, {}, {class: "form-control"}%>
                                     </div>
 
 
-                                    <button type="submit" class="btn btn-primary">Submit Button</button>
+                                    <button type="submit" class="btn btn-primary"><%= t('backoffice.save') %></button>
                                 <% end %>
                             </div>
                     </div>

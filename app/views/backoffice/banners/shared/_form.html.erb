@@ -21,16 +21,16 @@
                             <div class="col-lg-6">
                                 <%= form_for([:backoffice, @banner], html: { multipart: true}) do |f| %>
                                     <div class="form-group">
-                                        <label>Insert new banner</label>
+                                        <label><%= t('backoffice.name_banner') %></label>
                                         <%= f.text_field :title, class: "form-control", placeholder: "Ex. Promoção Dia dos Pais"%>
                                     </div>
                                     <div class="form-group">
-                                        <label>Insert the Picture </label>
+                                        <label><%= t('backoffice.banner_picture') %> </label>
                                         <%= image_tag @banner.picture(:large), class: "img-thumbnail" %>
                                         <%= f.file_field :picture, class: "form-control" %>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">Submit Button</button>
+                                    <button type="submit" class="btn btn-primary"><%= t('backoffice.save') %></button>
                                 <% end %>
                             </div>
                     </div>

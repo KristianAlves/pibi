@@ -1,8 +1,8 @@
-<h1 class="page-header">About</h1>
+<h1 class="page-header"><%= t('backoffice.about') %></h1>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-      Show About
+      <%= t('backoffice.show_about') %>
       <%= link_to new_backoffice_about_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
           <i class="fa fa-plus"></i>
       <% end %>
@@ -12,8 +12,8 @@
           <table class="table table-striped table-bordered table-hover">
               <thead >
                   <tr>
-                      <th> Title</th>
-                      <th>Description</th>
+                      <th> <%= t('backoffice.title') %></th>
+                      <th><%= t('backoffice.description') %></th>
                       <th></th>
                   </tr>
               </thead>

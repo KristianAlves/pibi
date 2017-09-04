@@ -15,6 +15,8 @@
 /* require turbolinks */
 //= require bootbox
 //= require bootstrap.growl
+//= require jquery.purr
+//= require best_in_place
 
 /*  Spin  */
 $(document).ready(function() {

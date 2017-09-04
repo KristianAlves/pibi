@@ -1,8 +1,8 @@
-<h1 class="page-header">Brands</h1>
+<h1 class="page-header"><%= t('backoffice.brands') %></h1>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-      Show Brands
+      <%= t('backoffice.show_brands') %>
       <%= link_to new_backoffice_brand_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
           <i class="fa fa-plus"></i>
       <% end %>
@@ -14,7 +14,7 @@
                   <tr>
                       <th style="width: 50px">#</th>
                       <th style="width: 250px">Logo</th>
-                      <th>Brand</th>
+                      <th><%= t('backoffice.brand') %></th>
                       <th></th>
                   </tr>
               </thead>

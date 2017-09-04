@@ -2,7 +2,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-      Show Banners
+      <%= t('backoffice.show_banners') %>
       <%= link_to new_backoffice_banner_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
           <i class="fa fa-plus"></i>
       <% end %>
@@ -13,8 +13,8 @@
               <thead >
                   <tr>
                       <th style="width: 50px">#</th>
-                      <th style="width: 250px"> Picture</th>
-                      <th>Description</th>
+                      <th style="width: 250px"> <%= t('backoffice.picture') %></th>
+                      <th><%= t('backoffice.description') %></th>
                       <th></th>
                   </tr>
               </thead>

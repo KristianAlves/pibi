@@ -24,7 +24,9 @@ gem 'redcarpet'
 # DocumentosBr é um 'wrapper' para a suíte de funcionalidades das Gems 'CpfUtils', 'CnpjUtils' e 'TituloEleitorUtils'.
 gem 'brazilian_documents', '~> 0.1.2'
 # IA RESTful unobtrusive jQuery Inplace-Editor and a helper as a Rails Gem
-gem 'best_in_place'
+gem 'best_in_place', '~> 3.0.1'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 
 source 'https://rails-assets.org' do
     # Bootstrap Notify
@@ -50,8 +52,6 @@ gem 'devise'
 gem 'devise-i18n'
 #Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

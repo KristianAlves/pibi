@@ -1,8 +1,8 @@
-    <h1 class="page-header">Categories</h1>
+    <h1 class="page-header"><%= t('backoffice.category') %></h1>
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                Show Categories
+                <%= t('backoffice.show_category') %>
                 <%= link_to new_backoffice_category_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
                     <i class="fa fa-plus"></i>
                 <% end %>
@@ -13,7 +13,7 @@
                         <thead >
                             <tr>
                                 <th style="width: 50px">#</th>
-                                <th>Category</th>
+                                <th><%= t('backoffice.category') %></th>
                                 <th></th>
                             </tr>
                         </thead>

@@ -1,8 +1,8 @@
-    <h1 class="page-header">Subcategories</h1>
+    <h1 class="page-header"><%= t('backoffice.subcategory') %></h1>
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                Show Subcategories
+                <%= t('backoffice.show_subcategory') %>
                 <%= link_to new_backoffice_subcategory_path, class:"btn btn-success btn-circle pull-right", style:"margin-top: -5px" do %>
                     <i class="fa fa-plus"></i>
                 <% end %>
@@ -13,8 +13,8 @@
                         <thead>
                             <tr>
                                 <th style="width: 50px">#</th>
-                                <th>Subcategory</th>
-                                <th style="width: 300px"> Belongs to Category</th>
+                                <th><%= t('backoffice.subcategory') %></th>
+                                <th style="width: 300px"> <%= t('backoffice.belong_category') %></th>
                                 <th></th>
                             </tr>
                         </thead>

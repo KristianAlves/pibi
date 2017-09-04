@@ -40,7 +40,7 @@ class Backoffice::SubcategoriesController < BackofficeController
   private
 
   def set_subcategory
-    @subcategory = SubCategory.friendly.find(params[:id])
+    @subcategory = Subcategory.find(params[:id])
   end
 
   def params_subcategory

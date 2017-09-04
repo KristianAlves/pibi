@@ -52,7 +52,7 @@
                                 <%= link_to "Profile", site_profile_physical_dashboard_index_path %>
                             </li>
                             <li>
-                                <%= link_to "Cart", site_cart_consumer_index_path %>
+                                <%= link_to "Cart (#{@carts_consumer_itens})", site_cart_consumer_index_path %>
                             </li>
                             <li>
                                 <%= link_to "Logout", destroy_consumer_session_path, method: :delete %>

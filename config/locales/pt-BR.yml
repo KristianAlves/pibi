@@ -26,3 +26,64 @@
         name: Nome
         phone: Telefone
         cpf: CPF
+  backoffice:
+    dashboard: Tela Inicial
+    category: Categorias
+    show_category: Mostrar Categorias
+    show_subcategory: Mostrar Subcategorias
+    clients: Clientes
+    legal_person: Pessoa Jurídica
+    physical_person: Pessoa Física
+    products: Produtos
+    show_products: Mostrar Produtos
+    show_brands: Mostrar Marcas
+    banner: Banner
+    configuration: Configuração
+    about: Sobre
+    logo: Logomarca
+    new_category: Nova Categoria
+    edit_category: Editar Categoria
+    insert_new_category: Insira a nova categoria
+    save: Salvar
+    subcategory: Subcategorias
+    belong_category: Pertence a Categoria
+    new_subcategory: Nova Subcategoria
+    edit_subcategory: Editar Subcategoria
+    insert_new_subcategory: Insira a nova subcategoria
+    select_category: Selecione a Categoria
+    member: Cliente - Pessoa Jurídica
+    show_client: Mostrar clientes
+    client: Cliente
+    consumer: Cliente - Pessoa Física
+    products: Produtos
+    show_products: Mostrar Produtos
+    new_products: Novo Produto
+    edit_products: Editar Produtos
+    product_title: Título do produto
+    product_description: Descrição do produto
+    product_picture: Imagem do produto
+    brand: Marca
+    brands: Marcas
+    show_brands: Mostrar Marcas
+    edit_brands: Editar Marca
+    new_brands: Nova Marca
+    brand_picture: Imagem da Marca
+    show_banners: Mostrar Banners
+    picture: Imagem
+    description: Descrição
+    new_banner: Novo Banner
+    name_banner: Nome do Banner
+    edit_banner: Editar Banner
+    banner_picture: Imagem do Banner
+    show_logo: Mostrar Logomarca
+    logo: Logomarca
+    new_logo: Nova Logomarca
+    edit_logo: Editar Logomarca
+    name_logo: Nome da Logomarca
+    logo_picture: Imagem do Logomarca
+    edit_about: Editar Sobre
+    new_about: Novo Sobre
+    about: Sobre
+    show_about: Mostar Sobre
+    title: Título
+    new_title: Novo Título

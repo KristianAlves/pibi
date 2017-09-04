@@ -16,32 +16,6 @@
             <%= current_admin.email%>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-alerts">
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-comment fa-fw"></i> New Budget
-                            <span class="pull-right text-muted small">4 minutes ago</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-envelope fa-fw"></i> New Message
-                            <span class="pull-right text-muted small">4 minutes ago</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.dropdown-alerts -->
-        </li>
-        <!-- /.dropdown -->
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
@@ -61,59 +35,56 @@
 
                 <li>
                     <%= link_to admin_path do %>
-                    <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                    <i class="fa fa-dashboard fa-fw"></i> <%= t('backoffice.dashboard') %>
                     <% end %>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <%= t('backoffice.category') %><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                           <%= link_to 'Show Categories', backoffice_categories_index_path %>
-                           <%= link_to 'Show Subcategory', backoffice_subcategories_index_path %>
+                           <%= link_to t('backoffice.show_category'), backoffice_categories_index_path %>
+                           <%= link_to t('backoffice.show_subcategory'), backoffice_subcategories_index_path %>
                         </li>
                     </ul>
                 </li>
 
                  <li>
-                    <a href="#"><i class="fa fa-users fa-fw"></i> Clients<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-users fa-fw"></i> <%= t('backoffice.clients') %><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                           <%= link_to 'Legal Person', backoffice_members_index_path %>
-                           <%= link_to 'Physical Person', backoffice_consumers_index_path %>
+                           <%= link_to t('backoffice.legal_person'), backoffice_members_index_path %>
+                           <%= link_to t('backoffice.physical_person'), backoffice_consumers_index_path %>
                         </li>
                     </ul>
                 </li>
 
                  <li>
-                    <a href="#"><i class="fa fa-edit fa-fw"></i> Products<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-edit fa-fw"></i> <%= t('backoffice.products') %><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                           <%= link_to 'Show Products', backoffice_products_index_path %>
-                           <%= link_to 'Show Brands', backoffice_brands_index_path %>
+                           <%= link_to t('backoffice.show_products'), backoffice_products_index_path %>
+                           <%= link_to t('backoffice.show_brands'), backoffice_brands_index_path %>
                         </li>
                     </ul>
                 </li>
 
                  <li>
                      <%= link_to backoffice_banners_index_path do %>
-                         <i class="fa fa-photo fa-fw"></i> Banner
+                         <i class="fa fa-photo fa-fw"></i> <%= t('backoffice.banner') %>
                      <% end %>
                 </li>
 
                 <li>
-                    <a href="#"><i class="fa fa-wrench fa-fw"></i> Configurations<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-wrench fa-fw"></i> <%= t('backoffice.configuration') %><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <%= link_to "E-mail", "#" %>
                         </li>
                         <li>
-                            <%= link_to "Notifications", "#" %>
+                            <%= link_to t('backoffice.logo'), backoffice_logos_index_path     %>
                         </li>
                         <li>
-                            <%= link_to "Logomarca", backoffice_logos_index_path     %>
-                        </li>
-                        <li>
-                                <%= link_to "About", backoffice_abouts_index_path     %>
+                                <%= link_to t('backoffice.about'), backoffice_abouts_index_path     %>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

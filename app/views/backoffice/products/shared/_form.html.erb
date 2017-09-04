@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-                <h1 class="page-header">Products</h1>
+                <h1 class="page-header"><%= t('backoffice.products') %></h1>
                     <% if @product.errors.any? %>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -22,34 +22,34 @@
                                 <%= form_for([:backoffice, @product], html: { multipart: true}) do |f| %>
                                     <div class="form-group">
                                         <div class="form-group">
-                                        <label>Insert the product title</label>
+                                        <label><%= t('backoffice.product_title') %></label>
                                         <%= f.text_field :title, class: "form-control", placeholder: "Ex. Notebook"%>
                                         </div>
                                         <div class="form-group">
-                                        <label>Insert the product description </label>
+                                        <label><%= t('backoffice.product_description') %> </label>
                                         <%= f.text_area :description, class: "form-control", :rows => 8 %>
                                         </div>
                                         <div class="form-group">
-                                            <label>Insert the Picture </label>
+                                            <label><%= t('backoffice.product_picture') %> </label>
                                             <%= image_tag @product.picture(:medium), class: "img-thumbnail" %>
                                             <%= f.file_field :picture, class: "form-control" %>
                                         </div>
                                         <div class="form-group">
-                                            <label>Select Category</label>
+                                            <label><%= t('backoffice.category') %></label>
                                             <%= f.collection_select :category_id, Category.all, :id, :description, {:prompt => "Selecione a Categoria"}, {class: "form-control"} %>
                                         </div>
                                         <div class="form-group">
-                                            <label>Select Subcategory</label>
+                                            <label><%= t('backoffice.subcategory') %></label>
                                             <%= f.collection_select :subcategory_id, Subcategory.all, :id, :title, {:prompt => "Selecione a Subcategoria"}, { class: "form-control"} %>
                                         </div>
                                         <div class="form-group">
-                                            <label>Select Brand</label>
+                                            <label><%= t('backoffice.brand') %></label>
                                             <%= f.collection_select :brand_id, Brand.all, :id, :title, {}, {class: "form-control"} %>
                                         </div>
 
                                     </div>
                                     <br>
-                                    <button type="submit" class="btn btn-primary">Submit Button</button>
+                                    <button type="submit" class="btn btn-primary"><%= t('backoffice.save') %></button>
                                 <% end %>
                             </div>
                     </div>

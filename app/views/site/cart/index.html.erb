@@ -42,7 +42,7 @@
                             <% @carts.each do |cart| %>
                                 <tr>
                                     <td><%= cart.product.title %></td>
-                                    <td style="width: 100px"><%= best_in_place cart, :quantity %></td>
+                                    <td style="width: 100px"><%= best_in_place cart, :quantity, url: site_cart_path(cart.id) %></td>
                                     <td style="width: 50px"> </style>
                                           <%= link_to site_cart_path(cart.id), method: :delete, class:"btn btn-danger btn-circle",
                                            data: {confirm: "Deseja realmente excluir este item?"} do %>
