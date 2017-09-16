@@ -1,5 +1,6 @@
 class Site::CartConsumerController < SiteController
   before_action :set_cart_consumer, only:[:edit, :update, :destroy]
+  respond_to :html, :json
 
   def index
     @categories = Category.order_by_description
@@ -22,11 +23,8 @@ class Site::CartConsumerController < SiteController
   end
 
   def update
-    if @cart_consumer.update(params_cart)
-      redirect_to site_cart_consumer_index_path, notice: "Cart successfully updated!"
-    else
-      render :edit
-    end
+    @cart_consumer.update(params_cart)
+    respond_with @cart_consumer
   end
 
   def destroy
@@ -42,7 +40,7 @@ class Site::CartConsumerController < SiteController
   end
 
   def params_cart
-    params.require(:cart).permit(:quantity)
+    params.require(:cart_consumer).permit(:quantity)
   end
 
 end

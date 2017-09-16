@@ -3,30 +3,30 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="sendMailModalLabel">New Message</h4>
+        <h4 class="modal-title" id="sendMailModalLabel"><%= t('site.new_message') %></h4>
       </div>
       <div class="modal-body">
       <%= form_tag(site_send_mail_index_path, remote: true) do %>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">Recipient:</label>
+            <label for="recipient-name" class="control-label"><%= t('site.recipient') %>:</label>
             <input type="text" class="form-control" disabled="disabled" id="recipient-name">
           </div>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">Sender:</label>
+            <label for="recipient-name" class="control-label"><%= t('site.sender') %>:</label>
             <%= text_field_tag(:'sender-name', nil, class:"form-control", required: "required" ) %>
           </div>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">Subject:</label>
+            <label for="recipient-name" class="control-label"><%= t('site.subject') %>:</label>
             <%= text_field_tag(:'subject-name', nil, class:"form-control", required: "required" ) %>
           </div>
           <div class="form-group">
-            <label for="message-text" class="control-label">Message:</label>
+            <label for="message-text" class="control-label"><%= t('site.message') %>:</label>
             <%= text_area_tag(:'message-text', nil, class:"form-control", required: "required" ) %>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= submit_tag "Send", class: "btn btn-primary" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('site.close') %></button>
+          <%= submit_tag t('site.send'), class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>

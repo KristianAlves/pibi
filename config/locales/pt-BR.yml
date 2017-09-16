@@ -7,6 +7,39 @@
     sign_in_physical: Login - Pessoa Física
     login: Entrar
     remember: Lembrar-me
+    home: Início
+    about: Sobre
+    contacts: Contato
+    profile: Meus dados
+    logout: Sair
+    legal_person: Pessoa Jurídica
+    physical_person: Pessoa Física
+    registration: Cadastro
+    cart: Carrinho
+    new_message: Nova Mensagem
+    message: Mensagem
+    recipient: Destinatário
+    sender: Remetente
+    subject: Assunto
+    close: Fechar
+    send: Enviar
+    profile_member: Meus Dados
+    profile_consumer: Meus Dados
+    company_name: Razão Social
+    fantasy_name: Nome Fantasia
+    street: Rua
+    city: Cidade
+    cnpj: CNPJ
+    phone: Telefone
+    save: Salvar
+    my_data: Meus dados
+    dashboard: Controle
+    name: Nome
+    cpf: CPF
+    from: Cliente
+    observation: Observação
+    send_cart: Enviar Orçamento
+
   devise:
     forgot: Esqueceu sua senha?
     send_mail: Reinicialização de senha
@@ -26,6 +59,7 @@
         name: Nome
         phone: Telefone
         cpf: CPF
+
   backoffice:
     dashboard: Tela Inicial
     category: Categorias
@@ -87,3 +121,7 @@
     show_about: Mostar Sobre
     title: Título
     new_title: Novo Título
+    logout: Sair
+    signin: Entrar - Administrador
+    remember: Lembrar-me
+    enter: Entrar

@@ -21,16 +21,16 @@
             <ul class="sidebar-nav">
                 <li>
                   <% if current_member %>
-                      <%= link_to "Dashboard", site_profile_legal_dashboard_index_path %>
+                      <%= link_to t('site.dashboard'), site_profile_legal_dashboard_index_path %>
                   <% else %>
-                      <%= link_to "Dashboard", site_profile_physical_dashboard_index_path %>
+                      <%= link_to t('site.dashboard'), site_profile_physical_dashboard_index_path %>
                   <% end %>
                 </li>
                 <li>
                   <% if current_member %>
-                      <%= link_to "My data", edit_site_profile_legal_my_datum_path(current_member.id) %>
+                      <%= link_to t('site.my_data'), edit_site_profile_legal_my_datum_path(current_member.id) %>
                   <% else %>
-                      <%= link_to "My data", edit_site_profile_physical_my_datum_path(current_consumer.id) %>
+                      <%= link_to t('site.my_data'), edit_site_profile_physical_my_datum_path(current_consumer.id) %>
                   <% end %>
                 </li>
             </ul>

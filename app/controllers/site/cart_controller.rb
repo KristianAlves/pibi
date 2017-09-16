@@ -1,5 +1,6 @@
 class Site::CartController < SiteController
   before_action :set_cart, only:[:edit, :update, :destroy]
+  respond_to :html, :json
 
   def index
     @categories = Category.order_by_description
@@ -22,11 +23,8 @@ class Site::CartController < SiteController
   end
 
   def update
-    if @cart.update(params_cart)
-      redirect_to site_cart_index_path, notice: "Cart successfully updated!"
-    else
-      render :edit
-    end
+    @cart.update(params_cart)
+    respond_with @cart
   end
 
   def destroy

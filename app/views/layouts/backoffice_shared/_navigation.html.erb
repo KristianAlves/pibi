@@ -20,7 +20,7 @@
             </a>
             <ul class="dropdown-menu dropdown-user">
             <%= link_to destroy_admin_session_path, method: :delete do %>
-                <i class="fa fa-sign-out fa-fw"></i> Logout
+                <i class="fa fa-sign-out fa-fw"></i> <%= t('backoffice.logout') %>
                 <% end %>
             </ul>
             <!-- /.dropdown-user -->
@@ -77,9 +77,6 @@
                 <li>
                     <a href="#"><i class="fa fa-wrench fa-fw"></i> <%= t('backoffice.configuration') %><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li>
-                            <%= link_to "E-mail", "#" %>
-                        </li>
                         <li>
                             <%= link_to t('backoffice.logo'), backoffice_logos_index_path     %>
                         </li>

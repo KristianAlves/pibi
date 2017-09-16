@@ -10,18 +10,18 @@
           <div class="form-group">
 
           <div class="form-group">
-            <label for="profile_consumer-text" class="control-label">From:</label>
+            <label for="profile_consumer-text" class="control-label"><%= t('site.from') %>:</label>
             <%= text_field_tag(:'profile_consumer-text', nil, class:"form-control", readonly: "readonly" ) %>
             <%= text_field_tag(:'sender-text', nil, class:"form-control", readonly: "readonly" ) %>
           </div>
 
-            <label for="message-text" class="control-label">Observation:</label>
+            <label for="message-text" class="control-label"><%= t('site.observation') %>:</label>
             <%= text_area_tag(:'message-text', nil , class: "form-control" ) %>
           </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= submit_tag "Enviar orçamento", class: "btn btn-primary" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('site.close') %></button>
+        <%= submit_tag  t('site.send_cart') ,class: "btn btn-primary" %>
       </div>
         <% end %>
     </div>

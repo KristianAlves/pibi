@@ -4,6 +4,7 @@ class Site::Profile::Physical::MyDataController < Site::ProfileController
   def edit
     @logos = Logo.all
     @abouts = About.all
+    @carts_consumer_itens = CartConsumer.count
   end
 
   def update

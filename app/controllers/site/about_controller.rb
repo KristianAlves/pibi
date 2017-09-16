@@ -7,6 +7,7 @@ class Site::AboutController < SiteController
     @logos = Logo.all
     @abouts = About.all
     @carts_itens = Cart.count
+    @carts_consumer_itens = CartConsumer.count
   end
 
 end

@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(version: 20170808231053) do
   create_table "cart_consumers", force: :cascade do |t|
     t.integer  "product_id"
     t.string   "description"
-    t.integer  "quantity",    default: 1
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "quantity",    default: "Informe a quantidade"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.integer  "buyer_id"
   end
 
@@ -73,9 +73,9 @@ ActiveRecord::Schema.define(version: 20170808231053) do
   create_table "carts", force: :cascade do |t|
     t.integer  "product_id"
     t.string   "description"
-    t.string   "quantity",    default: "1"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "quantity",    default: "Informe a quantidade"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.integer  "buyer_id"
   end
 
@@ -187,7 +187,7 @@ ActiveRecord::Schema.define(version: 20170808231053) do
     t.string   "street"
     t.string   "city"
     t.string   "cnpj",         limit: 14
-    t.integer  "phone",        limit: 40
+    t.string   "phone",        limit: 40
     t.integer  "member_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false

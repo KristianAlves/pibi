@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     get 'banners/index'
     get 'logos/index'
     get 'abouts/index'
+    get 'email/index'
     get 'dashboard', to: 'dashboard#index'
+    get 'find', to: 'find#products'
     resources :categories, except: [:show]
     resources :subcategories, except: [:show]
     resources :products, except: [:show]
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
     resources :banners, except: [:show]
     resources :logos, except: [:show]
     resources :abouts, except: [:show]
+    resources :email, except: [:show]
   end
 
   get 'admin', to: 'backoffice/dashboard#index'

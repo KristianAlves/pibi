@@ -94,9 +94,10 @@ puts "Pessoa Física Cadastrada com Sucesso!"
 
 puts "Cadastrando MARCAS..."
 
-      10.times do
+      4.times do
       Brand.create!(
-        title: Faker::Company.name
+        title: Faker::Company.name,
+        picture: File.new(Rails.root.join('public', 'templates', 'imagens', "#{Random.rand(4)}.png"), 'r')
         )
     end
 
@@ -109,7 +110,7 @@ puts "Cadastrando BANNERS..."
   5.times do
     Banner.create!(
       title: Faker::Commerce.department,
-      picture: File.new(Rails.root.join('public', 'templates', 'image-for-products', "#{Random.rand(9)}.jpg"), 'r')
+      picture: File.new(Rails.root.join('public', 'templates', 'imagens', "#{Random.rand(4)}.png"), 'r')
       )
   end
 
@@ -120,8 +121,10 @@ puts "BANNERS Cadastrados com Sucesso!"
 puts "Cadastrando LOGO..."
 
       logo = Logo.new(
-            title: "Pibi"
+            title: 'Pibi',
+            picture: File.new(Rails.root.join('public', 'templates', 'imagens', '1.png'), 'r')
       )
+      logo.save!
 
 puts "LOGO Cadastrado com Sucesso!"
 
