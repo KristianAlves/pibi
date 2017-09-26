@@ -68,6 +68,9 @@ GEM
     capistrano-rails (1.2.3)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     choice (0.2.0)
     climate_control (0.1.0)
     cocaine (0.5.8)
@@ -148,7 +151,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
-    mysql2 (0.4.5)
+    mysql2 (0.3.21)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.1.0)
@@ -278,6 +281,7 @@ DEPENDENCIES
   capistrano (~> 3.7)
   capistrano-bundler (~> 1.2)
   capistrano-rails (~> 1.2)
+  capistrano-rvm
   coffee-rails (~> 4.1.0)
   devise
   devise-i18n
@@ -290,7 +294,7 @@ DEPENDENCIES
   kaminari-i18n
   lerolero_generator
   mailcatcher
-  mysql2
+  mysql2 (~> 0.3.18)
   paperclip (~> 5.0.0)
   pg
   rails (= 4.2.5)
