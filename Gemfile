@@ -91,10 +91,12 @@ group :development do
   gem 'capistrano-bundler', '~> 1.2'
   gem 'capistrano-rails', '~> 1.2'
   gem 'capistrano-rvm'
+  gem 'capistrano3-unicorn'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
 group :production do
   gem 'mysql2', '~> 0.3.18'
+  gem 'unicorn'
 end
