@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "noreply@pibi.com.br"
+  default from: "vendaspibi@terra.com.br"
   layout 'mailer'
 end

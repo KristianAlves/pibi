@@ -19,7 +19,7 @@ class ContactMailer < ApplicationMailer
     @sender = sender
     @message = message
     @carts = CartConsumer.where(buyer: "1")
-    mail(to: 'pibivarejo@terra.com.br', subject: "Orçamento via Site - Pessoa Física")
+    mail(to: 'vendaspibi@terra.com.br', subject: "Orçamento via Site - Pessoa Física")
   end
 
 end
