@@ -2,7 +2,6 @@ class Site::SendMailMemberController < ApplicationController
   before_action :set_cart, only:[:new,:destroy]
   after_action :destroy, only:[:create]
 
-
   def new
   end
 
