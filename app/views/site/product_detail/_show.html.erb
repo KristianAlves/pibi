@@ -5,35 +5,9 @@
   <div>
       <% if member_signed_in? %>
           <div class="text-right">
-              <div class="panel-body">
-                  <!-- Button trigger modal -->
-                  <button class= "btn btn-primary btn-block btn-sm" data-toggle="modal" data-target="#myModal">
-                      Solicitar orçamento
-                  </button>
-                  <!-- Modal -->
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                      <div class="modal-dialog">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                              </div>
-                              <div class="modal-body", align="center">
-                                  Para quantas peças deseja o orçamento?
-                              </div>
-                            <%= form_tag(site_cart_index_path) do %>
-                            <%= hidden_field_tag :product_id, @product.id %>
-                              <div class="modal-footer", align="center">
-                                <%= submit_tag "Solicitar orçamento", class: "btn btn-success btn-block btn-sm" %>
-                              </div>
-                          </div>
-                          <!-- /.modal-content -->
-                      </div>
-                      <!-- /.modal-dialog -->
-                  </div>
-                  <!-- /.modal -->
-              </div>
-          </div>
-
+          <%= form_tag(site_cart_index_path) do %>
+              <%= hidden_field_tag :product_id, @product.id %>
+              <%= submit_tag "Solicitar orçamento", class: "btn btn-success btn-block btn-sm" %>
           <% end %>
           </div>
       <% elsif consumer_signed_in?%>
@@ -76,6 +50,6 @@
 
     <div class="caption-full">
         <h2 align="center"><%= @product.title %>   </h2>
-        <h5><%= @product.description %></h5>
+        <h5><%= md_to_html @product.description %></h5>
     </div>
 </div>

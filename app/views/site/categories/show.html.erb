@@ -1,7 +1,16 @@
-        <div class="panel panel-primary">
-            <div class="panel-heading" align="center">
-                <%= @category.description %>
-            </div>
-        </div>
+<div class="panel panel-primary">
+    <div class="panel-heading" align="center">
+        <%= @category.description %>
+    </div>
+    <br>
+    <div align="center">
+        <% @subcategories.each do |subcategory| %>
+            <% if subcategory.category_id == @category.id %>
+                <%= link_to " #{subcategory.title}", site_home_index_path , class: "btn btn-outline btn-primary" %>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
 
         <%= render partial: "site/shared/product" %>

@@ -19,6 +19,7 @@ class Product < ActiveRecord::Base
   scope :descending_order, ->(page) {order(created_at: :desc).page(page).per(qtt_per_page)}
   scope :descending_products, ->(page) {order(created_at: :desc).page(page).per(20)}
   scope :by_category, ->(id, page) {where(category: id).page(page).per(qtt_per_page)}
+  scope :by_subcategory, ->(id, page) {where(subcategory: id).page(page).per(qtt_per_page)}
   scope :search, ->(q, page) {where("title LIKE ?", "%#{q}%").page(page).per(qtt_per_page)}
   scope :pesquisar, ->(q, page) {where("title LIKE ?", "%#{q}%").page(page).per(20)}
 end

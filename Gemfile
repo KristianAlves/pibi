@@ -39,6 +39,8 @@ source 'https://rails-assets.org' do
     gem 'rails-assets-animate.css'
     # Bootstrap Markdown
     gem 'rails-assets-bootstrap-markdown'
+    # A markdown parser built for speed
+    gem 'rails-assets-marked'
 end
 
 #Easy file attachment management for ActiveRecord

@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
+has_many :subcategory
 
   include FriendlyId
   friendly_id :description, use: :slugged

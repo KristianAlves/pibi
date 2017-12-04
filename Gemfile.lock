@@ -201,6 +201,7 @@ GEM
       rails-assets-bootstrap (>= 2.0.0)
       rails-assets-jquery (>= 1.10.2)
     rails-assets-jquery (3.1.1)
+    rails-assets-marked (0.3.6)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.8)
@@ -324,6 +325,7 @@ DEPENDENCIES
   rails-assets-bootstrap!
   rails-assets-bootstrap-markdown!
   rails-assets-bootstrap.growl!
+  rails-assets-marked!
   rails-erd
   rails-i18n
   redcarpet

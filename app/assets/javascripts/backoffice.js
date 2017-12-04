@@ -1,3 +1,3 @@
 //= require bootstrap_sb_admin_base_v2
 //= require bootstrap-markdown
-
+//= require marked
