@@ -5,4 +5,9 @@ class Subcategory < ActiveRecord::Base
   # Scope
   scope :order_by_description, ->{ order(:title)}
 
+  include FriendlyId
+  friendly_id :title
+
+
+
 end

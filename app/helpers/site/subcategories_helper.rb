@@ -1,0 +1,2 @@
+module Site::SubcategoriesHelper
+end
