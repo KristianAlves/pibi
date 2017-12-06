@@ -9,14 +9,22 @@
 
   <div style="height: 200px;" style="width: 250px;">
       <p class="lead">Marcas</p>
-        <div class="carousel slide" data-ride="carousel">
+        <div id="carousel-brand", class="carousel slide" data-ride="carousel">
             <div class="carousel-inner ">
             <% @brands.each do |brand| %>
                 <div align="center" class="item <%= @brands.first.id == brand.id ? "active" : "" %>">
-                  <%= image_tag brand.picture.url(:thumb), class: "slide-image" %>
+                <%= link_to (image_tag brand.picture.url(:thumb)) , site_brand_path(brand), class: "slide-image" %>
                 </div>
             <% end %>
             </div>
+            <a class="left carousel-control" href="#carousel-brand" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-brand" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
   </div>
 

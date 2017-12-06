@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     resources :abouts, only: [:show]
     resources :categories, only: [:show]
     resources :subcategories, only: [:show]
+    resources :brands, only: [:show]
     resources :cart, except: [:show]
     resources :cart_consumer, except: [:show]
 
