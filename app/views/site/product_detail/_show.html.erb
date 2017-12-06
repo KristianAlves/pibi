@@ -51,5 +51,8 @@
     <div class="caption-full">
         <h2 align="center"><%= @product.title %>   </h2>
         <h5><%= md_to_html @product.description %></h5>
+        <hr>
+        <h5><b>Marca: </b><%= @product.brand.title %></h5>
+        <%= image_tag @product.brand.picture.url(:small), class:"img-responsive"%>
     </div>
 </div>
