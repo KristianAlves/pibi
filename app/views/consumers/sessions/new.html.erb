@@ -29,11 +29,13 @@
                           <%= f.submit t('site.login'), class: "btn btn-lg btn-success btn-block" %>
                       </fieldset>
                   <% end %>
+                <h5><%= link_to "Ainda não tenho cadastro", new_consumer_registration_path %></h5>
               </div>
           </div>
       </div>
   </div>
 </div>
+
 
 <% flash.each do |key, value| %>
   <%= javascript_tag "$.notify( {message: '#{value}'}, {type: 'danger', placement: { from: 'top', align: 'center'}});" %>

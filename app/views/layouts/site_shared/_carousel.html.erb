@@ -5,6 +5,7 @@
             <% @banners.each do |banner| %>
                 <div class="item <%= @banners.first.id == banner.id ? "active" : "" %>">
                   <%= image_tag banner.picture.url(:large), class: "slide-image" %>
+                  <br>
                 </div>
             <% end %>
             </a>
