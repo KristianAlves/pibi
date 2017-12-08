@@ -172,11 +172,11 @@ ActiveRecord::Schema.define(version: 20170808231053) do
 
   create_table "profile_consumers", force: :cascade do |t|
     t.string   "name"
-    t.string   "cpf",         limit: 11
-    t.string   "phone",       limit: 40
+    t.string   "cpf"
+    t.string   "phone"
     t.integer  "consumer_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "profile_consumers", ["consumer_id"], name: "index_profile_consumers_on_consumer_id"
@@ -186,11 +186,11 @@ ActiveRecord::Schema.define(version: 20170808231053) do
     t.string   "fantasy_name"
     t.string   "street"
     t.string   "city"
-    t.string   "cnpj",         limit: 14
-    t.string   "phone",        limit: 40
+    t.string   "cnpj"
+    t.string   "phone"
     t.integer  "member_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "profile_members", ["member_id"], name: "index_profile_members_on_member_id"
