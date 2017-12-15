@@ -40,7 +40,7 @@ class Backoffice::BrandsController < BackofficeController
 
 private
   def set_brand
-    @brand = Brand.find(params[:id])
+    @brand = Brand.friendly.find(params[:id])
   end
 
   def params_brand
