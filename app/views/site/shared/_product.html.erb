@@ -1,7 +1,11 @@
 <% @products.each do |product| %>
     <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
-            <%= image_tag product.picture.url(:medium) %>
+
+            <%= link_to(image_tag(product.picture.url(:medium)), site_product_detail_path(product),
+                                                                              remote: true, data: { push: :partial}) %>
+
+
                 <div class="caption">
                     <h4 align="center">
                         <%= link_to truncate(product.title, length: 19), site_product_detail_path(product),
@@ -63,7 +67,9 @@
 
 
 <div class="row">
-    <div class="text-center">
-        <%= paginate @products %>
+    <div align="center" class="col-lg-12">
+        <div class="text-center">
+            <%= paginate @products %>
+        </div>
     </div>
 </div>

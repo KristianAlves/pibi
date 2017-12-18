@@ -2,7 +2,7 @@ class Backoffice::BrandsController < BackofficeController
   before_action :set_brand, only: [:edit, :update, :destroy]
 
   def index
-    @brands = Brand.all
+    @brands = Brand.order_by_title
   end
 
   def new

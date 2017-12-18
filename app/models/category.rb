@@ -9,5 +9,6 @@ has_many :subcategory
 
   # Scope
   scope :order_by_description, ->{ order(:description)}
+  scope :order_by_title, ->{ order(:title)}
 
 end
