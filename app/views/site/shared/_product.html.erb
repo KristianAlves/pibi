@@ -2,7 +2,7 @@
     <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
 
-                 <%= link_to (image_tag product.picture.url(:medium)) , site_product_detail_path(product) %>
+                 <%= link_to (image_tag product.picture.url(:medium)) , site_product_detail_path(product), remote: true, data: { push: :partial} %>
 
                 <div class="caption">
                     <h4 align="center">
