@@ -16,8 +16,15 @@ class Product < ActiveRecord::Base
 
   # Scope
   scope :last_nine, ->{ limit(9).order(:created_at)}
-  scope :descending_order, ->(page) {order('RAND()').page(page).per(qtt_per_page)}
-  scope :descending_products, ->(page) {order('RAND()').page(page).per(20)}
+
+  if Rails.env.production?
+    scope :descending_order, ->(page) {order('RAND()').page(page).per(qtt_per_page)}
+    scope :descending_products, ->(page) {order('RAND()').page(page).per(20)}
+  else
+    scope :descending_order, ->(page) {order('Random()').page(page).per(qtt_per_page)}
+    scope :descending_products, ->(page) {order('Random()').page(page).per(20)}
+  end
+
   scope :by_category, ->(id, page) {where(category: id).page(page).per(qtt_per_page)}
   scope :by_subcategory, ->(id, page) {where(subcategory: id).page(page).per(qtt_per_page)}
   scope :by_brand, ->(id, page) {where(brand: id).page(page).per(qtt_per_page)}
