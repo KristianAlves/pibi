@@ -3,9 +3,10 @@
         <div class="thumbnail">
 
                 <div class="caption">
-                 <%= link_to (image_tag product.picture.url(:medium)) , site_product_detail_path(product), remote: true, data: { push: :partial} %>
+                 <%#= link_to (image_tag product.picture.url(:medium)) , site_product_detail_path(product), remote: true, data: { push: :partial} %>
+                 <%= image_tag product.picture.url(:medium) %>
                 </div>
-                
+
                 <div class="caption">
                     <h5 align="center">
                         <%= link_to truncate(product.title, length: 27), site_product_detail_path(product),
