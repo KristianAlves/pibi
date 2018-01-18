@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'backoffice/dashboard#index'
 
-  devise_for :admins, :skip => [:registrations]
+  devise_for :admins, controllers: { registrations: 'admins/registrations'}
   devise_for :members, controllers: { registrations: 'members/registrations'}
   devise_for :consumers, controllers: { registrations: 'consumers/registrations'}
 

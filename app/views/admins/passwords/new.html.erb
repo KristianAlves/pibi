@@ -1,16 +1,33 @@
-<h2>Forgot your password?</h2>
+<div class="row">
+        <hr>
+        <hr>
+</div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><%= t('devise.forgot') %></h3>
+                </div>
+                <div class="panel-body">
+                    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                        <fieldset>
+                            <div class="form-group">
+                                <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "E-mail" %>
+                            </div>
+                            <%= f.submit t('devise.send_mail'), class: "btn btn-lg btn-success btn-block" %>
+                        </fieldset>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
+<% unless devise_error_messages!.blank? %>
+    <% resource.errors.full_messages.each do |message| %>
+        <%= javascript_tag "$.notify( {message: '#{message}'},
+                                        {type: 'danger', placement: { from: 'top', align: 'center'}});" %>
+    <% end %>
 <% end %>
-
-<%= render "admins/shared/links" %>
