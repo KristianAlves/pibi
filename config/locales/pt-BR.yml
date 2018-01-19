@@ -45,6 +45,8 @@
     send_mail: Reinicialização de senha
     change_pwd: Mudar minha senha
     change: Mude sua senha
+    edit_pwd: Alterar Senha
+    update: Atualizar
 
   helpers:
     label:
@@ -125,3 +127,4 @@
     signin: Entrar - Administrador
     remember: Lembrar-me
     enter: Entrar
+    reset: Alterar senha

@@ -1,7 +1,7 @@
 puts "Cadastrando ADMINISTRADOR Padrão..."
 
       Admin.create!(
-            email: "pibi@comercialpibi.com.br",
+            email: "vendaspibi@terra.com.br",
             password: "esponja",
             password_confirmation: "esponja"
       )
