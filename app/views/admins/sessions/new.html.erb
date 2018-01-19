@@ -19,9 +19,7 @@
                                     <label>
                                         <%= f.check_box :remember_me %> <%= t('backoffice.remember') %>
                                     </label>
-                                </div>
-                                  <h6><%= link_to "Esqueceu sua senha?", new_admin_password_path %></h6>
-                                <!-- Change this to a button or input when using this as a form -->
+                                </div>  
                                 <%= f.submit t('backoffice.enter'), class: "btn btn-lg btn-success btn-block" %>
                             </fieldset>
                         <% end %>
