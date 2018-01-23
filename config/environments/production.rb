@@ -2,13 +2,13 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
 # Devise Config
-  config.action_mailer.default_url_options = { host: 'kristian.com.br' }
+  config.action_mailer.default_url_options = { host: 'comercialpibi.com.br' }
 
   # Mailgun
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
     api_key: Rails.application.secrets.mailgun_secret_api_key,
-    domain: 'mail.kristian.com.br',
+    domain: 'mail.comercialpibi.com.br',
   }
 
 
