@@ -12,7 +12,7 @@ class Backoffice::BrandsController < BackofficeController
   def create
     @brand = Brand.new(params_brand)
     if @brand.save
-      redirect_to backoffice_brands_path, notice: "Brand #{@brand.title} successfully registered!"
+      redirect_to backoffice_brands_path, notice: t('backoffice.brand_create')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Backoffice::BrandsController < BackofficeController
 
   def update
     if @brand.update(params_brand)
-      redirect_to backoffice_brands_path, notice: "Brand #{@brand.title} successfully updated!"
+      redirect_to backoffice_brands_path, notice: t('backoffice.brand_update')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Backoffice::BrandsController < BackofficeController
 
   def destroy
     if @brand.destroy
-      redirect_to backoffice_brands_path, notice: "Brand #{@brand.title} successfully delete!"
+      redirect_to backoffice_brands_path, notice: t('backoffice.brand_destroy')
     else
       render :index
     end

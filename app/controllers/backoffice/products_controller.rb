@@ -12,7 +12,7 @@ class Backoffice::ProductsController < BackofficeController
   def create
     @product = Product.new(params_product)
     if @product.save
-      redirect_to backoffice_products_path, notice: "product (#{@product.title}) successfully registered!"
+      redirect_to backoffice_products_path, notice: t('backoffice.product_create')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Backoffice::ProductsController < BackofficeController
 
   def update
     if @product.update(params_product)
-      redirect_to backoffice_products_path, notice: "Product (#{@product.title}) successfully updated!"
+      redirect_to backoffice_products_path, notice: t('backoffice.product_update')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Backoffice::ProductsController < BackofficeController
 
   def destroy
     if @product.destroy
-      redirect_to backoffice_products_path, notice: "Product (#{@product.title}) successfully delete!"
+      redirect_to backoffice_products_path, notice: t('backoffice.product_destroy')
     else
       render :index
     end

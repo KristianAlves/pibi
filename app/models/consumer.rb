@@ -10,6 +10,15 @@ class Consumer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Quantity per Page
+    qtt_per_page = 24
+
+
+  # Scope
+    scope :order_by_mail, ->(page) {order(:email).page(page).per(qtt_per_page)}
+    scope :search, ->(q, page) {where("email LIKE ?", "%#{q}%").page(page).per(qtt_per_page)}
+    scope :pesquisar, ->(q, page) {where("email LIKE ?", "%#{q}%").page(page).per(20)}
+
   # Validates
   validate :nested_attributes_consumer_name
   validate :nested_attributes_consumer_cpf

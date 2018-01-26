@@ -128,3 +128,24 @@
     remember: Lembrar-me
     enter: Entrar
     reset: Alterar senha
+    about_create: Descrição sobre a empresa criada com sucesso!
+    about_update: Descrição sobre a empresa atualizada com sucesso!
+    about_destroy: Descrição sobre a empresa deletada com sucesso!
+    banner_create: Banner Criado com sucesso!
+    banner_update: Banner Atualizado com sucesso!
+    banner_destroy: Banner Deletado com sucesso!
+    brand_create: Marca Criada com sucesso!
+    brand_update: Marca Atualizada com sucesso!
+    brand_destroy: Marca Deletada com sucesso!
+    category_create: Categoria Criada com sucesso!
+    category_update: "Categoria Atualizada com sucesso!"
+    category_destroy: Categoria Deletada com sucesso!
+    logo_create: Logo Criada com sucesso!
+    logo_update: "Logo Atualizada com sucesso!"
+    logo_destroy: Logo Deletada com sucesso!
+    product_create: Produto Criado com sucesso!
+    product_update: "Produto Atualizado com sucesso!"
+    product_destroy: Produto Deletado com sucesso!
+    subcategory_create: Subcategoria Criada com sucesso!
+    subcategory_update: "Subcategoria Atualizada com sucesso!"
+    subcategory_destroy: Subcategoria Deletada com sucesso!

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get 'dashboard', to: 'dashboard#index'
     get 'find', to: 'find#products'
     get 'search', to: 'search#brands'
+    get 'research', to: 'research#consumers'
+    get 'survey', to: 'survey#members'
     resources :categories, except: [:show]
     resources :subcategories, except: [:show]
     resources :products, except: [:show]

@@ -12,7 +12,7 @@ class Backoffice::BannersController < BackofficeController
   def create
     @banner = Banner.new(params_banner)
     if @banner.save
-      redirect_to backoffice_banners_path, notice: "Banner #{@banner.title} successfully registered!"
+      redirect_to backoffice_banners_path, notice: t('backoffice.banner_create')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Backoffice::BannersController < BackofficeController
 
   def update
     if @banner.update(params_banner)
-      redirect_to backoffice_banners_path, notice: "Banner #{@banner.title} successfully updated!"
+      redirect_to backoffice_banners_path, notice: t('backoffice.banner_update')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Backoffice::BannersController < BackofficeController
 
   def destroy
     if @banner.destroy
-      redirect_to backoffice_banners_path, notice: "Banner #{@banner.title} successfully delete!"
+      redirect_to backoffice_banners_path, notice: t('backoffice.banner_destroy')
     else
       render :index
     end

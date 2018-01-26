@@ -12,7 +12,7 @@ class Backoffice::SubcategoriesController < BackofficeController
   def create
     @subcategory = Subcategory.new(params_subcategory)
     if @subcategory.save
-      redirect_to backoffice_subcategories_path, notice: "Subcategory (#{@subcategory.title}) successfully registered!"
+      redirect_to backoffice_subcategories_path, notice: t('backoffice.subcategory_create')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Backoffice::SubcategoriesController < BackofficeController
 
   def update
     if @subcategory.update(params_subcategory)
-      redirect_to backoffice_subcategories_path, notice: "Subcategory (#{@subcategory.title}) successfully updated!"
+      redirect_to backoffice_subcategories_path, notice: t('backoffice.subcategory_update')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Backoffice::SubcategoriesController < BackofficeController
 
   def destroy
     if @subcategory.destroy
-      redirect_to backoffice_subcategories_path, notice: "Subcategory successfully delete!"
+      redirect_to backoffice_subcategories_path, notice: t('backoffice.subcategory_destroy')
     else
       render :index
     end

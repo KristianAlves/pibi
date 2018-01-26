@@ -12,7 +12,7 @@ class Backoffice::AboutsController < BackofficeController
   def create
     @about = About.new(params_about)
     if @about.save
-      redirect_to backoffice_abouts_path, notice: "About #{@about.title} successfully registered!"
+      redirect_to backoffice_abouts_path, notice: t('backoffice.about_create')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Backoffice::AboutsController < BackofficeController
 
   def update
     if @about.update(params_about)
-      redirect_to backoffice_abouts_path, notice: "About #{@about.title} successfully updated!"
+      redirect_to backoffice_abouts_path, notice: t('backoffice.about_update')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Backoffice::AboutsController < BackofficeController
 
   def destroy
     if @about.destroy
-      redirect_to backoffice_abouts_path, notice: "About #{@about.title} successfully delete!"
+      redirect_to backoffice_abouts_path, notice: t('backoffice.about_destroy')
     else
       render :index
     end

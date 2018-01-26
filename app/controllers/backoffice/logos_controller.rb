@@ -12,7 +12,7 @@ class Backoffice::LogosController < BackofficeController
   def create
     @logo = Logo.new(params_logo)
     if @logo.save
-      redirect_to backoffice_logos_path, notice: "Logo #{@logo.title} successfully registered!"
+      redirect_to backoffice_logos_path, notice: t('backoffice.logo_create')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Backoffice::LogosController < BackofficeController
 
   def update
     if @logo.update(params_logo)
-      redirect_to backoffice_logos_path, notice: "Logo #{@logo.title} successfully updated!"
+      redirect_to backoffice_logos_path, notice: t('backoffice.logo_update')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Backoffice::LogosController < BackofficeController
 
   def destroy
     if @logo.destroy
-      redirect_to backoffice_logos_path, notice: "Logo #{@logo.title} successfully delete!"
+      redirect_to backoffice_logos_path, notice: t('backoffice.logo_destroy')
     else
       render :index
     end

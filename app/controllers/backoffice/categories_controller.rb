@@ -12,7 +12,7 @@ class Backoffice::CategoriesController < BackofficeController
   def create
     @category = Category.new(params_category)
     if @category.save
-      redirect_to backoffice_categories_path, notice: "Category (#{@category.description}) successfully registered!"
+      redirect_to backoffice_categories_path, notice: t('backoffice.category_create')
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Backoffice::CategoriesController < BackofficeController
 
   def update
     if @category.update(params_category)
-      redirect_to backoffice_categories_path, notice: "Category (#{@category.description}) successfully updated!"
+      redirect_to backoffice_categories_path, notice: t('backoffice.category_update')
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Backoffice::CategoriesController < BackofficeController
 
     def destroy
       if @category.destroy
-        redirect_to backoffice_categories_path, notice: "Category successfully delete!"
+        redirect_to backoffice_categories_path, notice: t('backoffice.category_delete')
       else
         render :index
       end
