@@ -1,8 +1,6 @@
 class Backoffice::AboutsController < BackofficeController
   before_action :set_about, only: [:edit, :update, :destroy]
 
-
-
   def index
     @abouts = About.all
   end

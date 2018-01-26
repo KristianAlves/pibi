@@ -36,15 +36,15 @@
                                         </div>
                                         <div class="form-group">
                                             <label><%= t('backoffice.category') %></label>
-                                            <%= f.collection_select :category_id, Category.all, :id, :description, {:prompt => "Selecione a Categoria"}, {class: "form-control"} %>
+                                            <%= f.collection_select :category_id, Category.all.order(description: :asc), :id, :description, {:prompt => "Selecione a Categoria"}, {class: "form-control"} %>
                                         </div>
                                         <div class="form-group">
                                             <label><%= t('backoffice.subcategory') %></label>
-                                            <%= f.grouped_collection_select :subcategory_id, Category.all, :subcategory, :description, :id, :title, {:prompt => "Selecione a Subcategoria"}, { class: "form-control"} %>
+                                            <%= f.grouped_collection_select :subcategory_id, Category.all.order(description: :asc), :subcategory, :description, :id, :title, {:prompt => "Selecione a Subcategoria"}, { class: "form-control"} %>
                                         </div>
                                         <div class="form-group">
                                             <label><%= t('backoffice.brand') %></label>
-                                            <%= f.collection_select :brand_id, Brand.all, :id, :title, {}, {class: "form-control"} %>
+                                            <%= f.collection_select :brand_id, Brand.all.order(title: :asc), :id, :title, {:prompt => "Selecione a Marca"}, {class: "form-control"} %>
                                         </div>
 
                                     </div>
