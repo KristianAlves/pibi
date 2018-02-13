@@ -24,6 +24,7 @@ $(document).ready(function() {
 });
 
 
+
 /*  Spin  */
 $(document).ready(function() {
   // Global ajax cursor change
